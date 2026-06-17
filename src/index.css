@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm antique palette — OKLCH */
+    --bg: oklch(0.98 0.004 75);
+    --surface: oklch(0.94 0.010 70);
+    --surface-raised: oklch(0.97 0.008 74);
+    --ink: oklch(0.16 0.010 68);
+    --ink-muted: oklch(0.46 0.008 70);
+    --ink-faint: oklch(0.64 0.006 72);
+    --primary: oklch(0.38 0.11 192);
+    --primary-light: oklch(0.50 0.13 192);
+    --primary-glow: oklch(0.62 0.11 192);
+    --accent: oklch(0.56 0.14 62);
+    --accent-dark: oklch(0.46 0.12 58);
+    --danger: oklch(0.52 0.15 22);
+    --danger-muted: oklch(0.62 0.11 28);
+    --border: oklch(0.72 0.014 70);
+    --border-subtle: oklch(0.86 0.010 74);
+
+    /* Fonts — edit here to change the typeface */
+    --font-body: ui-sans-serif, "PingFang TC", "Microsoft JhengHei", "Microsoft JhengHei UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "WenQuanYi Micro Hei", sans-serif, system-ui, -apple-system;
+    --font-display: 'Crimson Pro', Georgia, serif;
+
+    /* Shadows */
+    --shadow-panel: 0 2px 12px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03);
+    --shadow-pressed: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    overscroll-behavior: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
